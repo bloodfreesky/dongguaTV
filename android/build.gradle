@@ -1,9 +1,12 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    
     repositories {
         google()
+        // 新增阿里云Maven镜像（解决403问题）
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin/' }
+        // 保留原有的mavenCentral()作为备用（可选）
         mavenCentral()
     }
     dependencies {
@@ -20,6 +23,9 @@ apply from: "variables.gradle"
 allprojects {
     repositories {
         google()
+        // 同样新增阿里云Maven镜像
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin/' }
         mavenCentral()
     }
 }
